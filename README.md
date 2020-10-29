@@ -34,6 +34,13 @@ CSS
 
 Javascript
 
+NPM Modules/Libraries
+express 
+mongoose 
+express-ejs-layouts 
+ejs method-override 
+dayjs
+
 ## Features
 
 - User Friendly
