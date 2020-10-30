@@ -3,7 +3,8 @@
 <ul>
     <% ingredients.forEach(ing => { %>
      <li>
-       <a href="/ingredients/<%= ing.id %>"><%= ing.name %></a>
-     </li>
+       <%= ing.name %>
+       <a href="/ingredients/<%=ing._id%>/edit">Edit</a>
+      </li>
     <% }) %>
   </ul>

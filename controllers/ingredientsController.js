@@ -2,19 +2,19 @@
 const router=require('express').Router();
 const Ingredient = require('../models/ingredient');
 
-//All Ingredient
+//Index All Ingredient
 router.get("/", async(req,res)=>{
     let allIngredient=await Ingredient.find({});
     res.render("ingredients/index.ejs",{
         ingredients:allIngredient,
     })
 });
-// NEW INGREDIENT FORM
+// NEW INGREDIENT GET FORM
 router.get('/new', (req, res) => {
     //res.send('new router')
     res.render('ingredients/new.ejs');
   });
-// CREATE A NEW INGREDIENT
+// CREATE POST A NEW INGREDIENT
 router.post('/', async (req, res) => {
     try {
       let newIngredient = await Ingredient.create(req.body);
@@ -23,6 +23,26 @@ router.post('/', async (req, res) => {
     } catch (error) {
       res.send(error);
     }
-
 });
+//UPDATE
+router.put("/:id",(req,res)=>{
+   
+    Ingredient.findByIdAndUpdate(req.params.id,req.body,(err)=>{
+        if (err) res.send(err);
+        res.redirect('/ingredients');
+    }) 
+})
+//EDIT ROUTE
+router.get("/:id/edit", (req,res)=>{
+    //console.log('edit')
+    //res.send(req.params.id)
+   Ingredient.findById(req.params.id,(err,foundIngredient)=>{
+        if (err) res.send(err);
+        //res.send(req.params.id)
+        res.render('ingredients/edit.ejs',{
+       ingredient:foundIngredient,//send the whole kay value pairs
+       
+   });
+   })
+})
 module.exports=router;
