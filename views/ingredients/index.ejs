@@ -1,0 +1,9 @@
+<h1>all ingredients</h1>
+<a href="/ingredients/new">add new ingredient</a>
+<ul>
+    <% ingredients.forEach(ing => { %>
+     <li>
+       <a href="/ingredients/<%= ing.id %>"><%= ing.name %></a>
+     </li>
+    <% }) %>
+  </ul>

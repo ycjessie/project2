@@ -40,6 +40,8 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
+const IngredientController = require('./controllers/ingredientsController.js')
+app.use('/ingredients', IngredientController)
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
