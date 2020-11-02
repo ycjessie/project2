@@ -24,25 +24,30 @@ router.post('/', async (req, res) => {
       res.send(error);
     }
 });
-//UPDATE
-router.put("/:id",(req,res)=>{
+//UPDATE/PUT
+router.put("/:id",async (req,res)=>{
    
-    Ingredient.findByIdAndUpdate(req.params.id,req.body,(err)=>{
-        if (err) res.send(err);
-        res.redirect('/ingredients');
+   await Ingredient.findByIdAndUpdate(req.params.id,req.body,(err)=>{
+        try{
+            res.redirect('/ingredients');
+        }
+        catch(error){
+            res.send(error);
+        }
     }) 
 })
 //EDIT ROUTE
-router.get("/:id/edit", (req,res)=>{
+router.get("/:id/edit", async(req,res)=>{
     //console.log('edit')
     //res.send(req.params.id)
-   Ingredient.findById(req.params.id,(err,foundIngredient)=>{
-        if (err) res.send(err);
-        //res.send(req.params.id)
-        res.render('ingredients/edit.ejs',{
-       ingredient:foundIngredient,//send the whole kay value pairs
-       
-   });
+   await Ingredient.findById(req.params.id,(err,foundIngredient)=>{
+        try{
+            res.render('ingredients/edit.ejs',{
+                ingredient:foundIngredient,//send the whole kay value pairs
+            });
+        }catch(error){
+            res.send(error);
+        }
    })
 })
 module.exports=router;
