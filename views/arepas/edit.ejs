@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%=arepas.name%> Detail</h1>
+    <h4>Ingredients</h4>
+    <form action="/arepas/<%= arepas.id %>/ingredients?_method=PUT"
+        method="POST">
+        <% ingredients.forEach(ing => { %>
+        <input type="checkbox" name="ingredientId" value="<%= ing.id %>" />
+        <label for="<%= ing.name %>"><%= ing.name %></label><br />
+        <% })%>
+        <input type="submit" value="Add Ingredients" />
+    </form>
+    <ul>
+        <% arepas.ingredients.forEach(ing => { %>
+         <li>
+           <%= ing.name %>
+          </li>
+        <% }) %>
+      </ul>
+</body>
+</html>

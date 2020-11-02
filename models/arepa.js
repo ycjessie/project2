@@ -15,7 +15,7 @@ const arepaSchema = new mongoose.Schema({
   ingredients: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Ingredient',
+      ref: 'Ingredient',//Ingredient Model
     },
   ],
 },{timestamps:true});

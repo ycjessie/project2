@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Arepa</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Add new Arepa</h1>
-   <form action="/arepas" method="POST">
-    <div class="form-group">
-      <label for="name">Arepa Name</label>
-      <!-- id match with for -->
-      <input type="text" class="form-control" id="name" name="name" required/>
-      <label for="image">Image</label>
-      <!-- id match with for -->
-      <input type="text" class="form-control" id="image" name="image" />
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <h1>Create a New Arepa</h1>
+    <form action="/arepas" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" />
+          <label for="image">Image</label>
+          <input type="text" class="form-control" id="image" name="image" />
+        </div>
+        <% ingredients.forEach(ingredient => { %>
+        <input
+          type="checkbox"
+          id="<%= ingredient.name %>"
+          name="ingredients"
+          value="<%= ingredient.id %>"
+        />
+        <label for="<%= ingredient.name %>"><%= ingredient.name %></label><br />
+        <% })%>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
 </body>
 </html>

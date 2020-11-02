@@ -11,9 +11,14 @@
 <ul>
     <% arepas.forEach(arepa => { %>
      <li>
-       <%= arepa.name %>
+       
+       <a href="/arepas/<%=arepa._id%>"> <%= arepa.name%> </a>
        <a href="/arepas/<%=arepa._id%>/edit">Edit</a>
-      </li>
+      <br>
+      <form action="/arepas/<%=arepa._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+      </form>
+    </li>
     <% }) %>
   </ul>
 </body>
