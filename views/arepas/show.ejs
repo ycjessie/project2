@@ -17,7 +17,15 @@
         <% }) %>
       </ul>
       <img src="/image/<%=arepas.image%>"> 
-   
+      
+      <form action="/arepas/<%= arepas.id %>/ingredients?_method=PUT"
+        method="POST">
+        <% ingredients.forEach(ing => { %>
+        <input type="checkbox" name="ingredientId" value="<%= ing.id %>" />
+        <label for="<%= ing.name %>"><%= ing.name %></label><br />
+        <% })%>
+        <input type="submit" value="Add Ingredients" />
+    </form>
 </body>
 </body>
 </html>
