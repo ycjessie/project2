@@ -50,4 +50,12 @@ router.get("/:id/edit", async(req,res)=>{
         }
    })
 })
+//Delete Ingredient
+router.delete("/:id", (req, res) => {
+    Ingredient.findByIdAndRemove(req.params.id, (err) => {
+      if (err) res.send(err);
+      res.redirect("/arepas");
+    });
+    //redirect back to index route
+});
 module.exports=router;

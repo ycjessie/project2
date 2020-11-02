@@ -8,20 +8,22 @@
 <body>
     <h1><%=arepas.name%> Detail</h1>
     <h4>Ingredients</h4>
-    <form action="/arepas/<%= arepas.id %>/ingredients?_method=PUT"
-        method="POST">
-        <% ingredients.forEach(ing => { %>
-        <input type="checkbox" name="ingredientId" value="<%= ing.id %>" />
-        <label for="<%= ing.name %>"><%= ing.name %></label><br />
-        <% })%>
-        <input type="submit" value="Add Ingredients" />
+    <form action="/arepas/<%= arepas._id %>?_method=PUT" method="POST" >
+        <label for="name"> Name</label><br>
+        <input type="text" id="name" name="name" value="<%= arepas.name %> "><br>
+        <label for="image">Image</label><br>
+        <input type="text" id="image" name="image" value="<%= arepas.image %> ">
+        <input type="submit" value="Edit">
     </form>
     <ul>
         <% arepas.ingredients.forEach(ing => { %>
          <li>
            <%= ing.name %>
+           <form action="/arepas/<%=arepas.ingredients._id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+          </form>
           </li>
         <% }) %>
-      </ul>
+    </ul>
 </body>
 </html>

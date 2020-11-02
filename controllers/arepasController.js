@@ -38,14 +38,18 @@ router.post("/", async (req, res) => {
   res.redirect(`/arepas/${newArepa.id}`);
 });
 //EDIT ROUTE
-// router.get("/:id/edit", (req, res) => {
-//   Arepa.findById(req.params.id, (err, foundArepa) => {
-//     if (err) res.send(err);
-//     res.render("arepas/edit.ejs", {
-//       arepas: foundArepa, //send the whole kay value pairs
-//     });
-//   });
-// });
+router.get("/:id/edit", async (req, res) => {
+  let allIngredients = await Ingredient.find({});
+  let foundArepas = await Arepa.findById(req.params.id).populate({
+    path: "ingredients",
+    option: { sort: { name: "desc" } },
+  });
+  //res.send(foundArepas)
+  res.render("arepas/edit.ejs", {
+    arepas: foundArepas,
+    ingredients: allIngredients,
+  });
+});
 
 //Put ingredient to arepa
 router.put('/:id/ingredients', async (req, res) => {
@@ -57,13 +61,9 @@ router.put('/:id/ingredients', async (req, res) => {
         ingredients: req.body.ingredientId,
       },
     },
-    function ( err ) {
-      if(err){
-              console.log(err);
-      }else{
-              console.log("Successfully added");
-      }
-    });
+      {new: true, upsert: true})
+      console.log(foundArepa)
+    
   res.redirect(`/arepas/${foundArepa.id}`);
 });
 
@@ -75,4 +75,5 @@ router.delete("/:id", (req, res) => {
   });
   //redirect back to index route
 });
+
 module.exports = router;
