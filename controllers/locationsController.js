@@ -15,11 +15,15 @@ router.get("/:locationId", (req, res) => {
   });
 });
 // CREATE A NEW LOCATION
-router.post('/', (req, res) => {
-  Location.create(req.body, (error, newLocation) => {
-    res.send(newLocation);
+router.post('/', async (req, res) => {
+  try{
+  let arepaLocation=await Location.create(req.body)
+    res.send(arepaLocation);
     //res.redirect(`/locations/${newLocation._id}`);
-  });
+  }catch(error){
+    console.log(error)
+    res.send('see terminal')
+  }
 });
 
 // CREATE Address EMBEDDED IN location

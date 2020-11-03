@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const addressSchema = new mongoose.Schema({
-  cityName:{type:String,unique:true},
+  cityName:{type:String},
   stateName:{type:String,unique:true},
  // stateName:{type: String,unique:true,require:true},
 },{timestamps:true});
