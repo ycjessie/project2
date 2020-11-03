@@ -78,19 +78,25 @@ router.put("/:id/ingredients", async (req, res) => {
 // });
 //Delete Arepa
 router.delete("/:id", async (req, res) => {
-  await Arepa.findOneAndUpdate(
-    { id: req.params.id },
-    {$pull: { ingredients: req.params.id }},
-    { new: true })
-    .then(ingredients=>console.log(ingredients))
-    .catch(err =>console.log(err))
+  try{
+    let foundArepa=await Arepa.findOneAndUpdate(
+      //{ id: req.params.id },
+       {$pull: { ingredients:req.params.id}},
+      // { new: true }
+    );console.log(foundArepa)
+    res.send(foundArepa)
+  }catch(err){
+    console.error(err);
+  }
+   
     
-    Arepa.findByIdAndRemove(
-      { _id: req.params.id }, (err) => {
-        res.send('successful')
-      }
+  //Delete Arepa
+  // await Arepa.findByIdAndRemove(
+  //     { _id: req.params.id }, (err) => {
+  //       res.send('successful')
+  //     }
     
-  );
+  // );
 
   //redirect back to index route
 });
