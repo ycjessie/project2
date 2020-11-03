@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location detail</title>
+</head>
+<body>
+    <h1><%= location.name %>'s Detail Page</h1>
+<h4>Create a New Tweet</h4>
+<form action="/locations/<%= location.id %>/address" method="POST">
+  <div class="form-group">
+
+    <label for="cityName">City</label>
+    <input type="text" class="form-control" id="cityName" name="cityName"/>
+    <label for="stateName">State</label>
+    <input type="text" class="form-control" id="stateName" name="stateName"/>
+    
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<h1>Location</h1>
+
+<ul>
+  <% location.address.forEach(add => { %>
+  <li><%= add.cityName %></li>
+  <% }) %>
+</ul>
+    
+</body>
+</html>
