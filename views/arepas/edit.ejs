@@ -20,7 +20,7 @@
         <% arepas.ingredients.forEach(ing => { %>
          <li>
            <%= ing.name %>
-           <form action="/arepas/<%=ing._id%>?_method=DELETE" method="POST">
+           <form action="/arepas/<%=ing._id%>/<%=arepas._id%>?_method=DELETE" method="POST">
             <button>Delete</button>
           </form>
           </li>
