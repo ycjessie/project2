@@ -6,7 +6,7 @@ const arepaSchema = new mongoose.Schema({
     trim:true,
     default: '',
     require:true,
-    unique:true,
+    
   },
   image: {
     type: String,
@@ -17,7 +17,7 @@ const arepaSchema = new mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Ingredient',//Ingredient Model
-      unique:true,
+      
     },
   ],
 },{timestamps:true});
