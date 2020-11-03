@@ -87,19 +87,25 @@ router.delete("/:ingredientId/:arepaId", async (req, res) => {
     let foundArepa=await Arepa.findOneAndUpdate(
       { _id: req.params.arepaId },
       {$pull: { ingredients:req.params.ingredientId}},
-      { new: true }
-    );//console.log(foundArepa)
+      { new: true });//console.log(foundArepa)
     //res.send(foundArepa)
     res.redirect(`/arepas/${foundArepa.id}`);
   }catch(err){
     console.error(err);
     res.send('see the terminal')
   }
+});
   //Delete Arepa
-  // await Arepa.findByIdAndRemove(
-  //     { id: req.params.id }, (err) => {
-  //       res.send('successful')
-  //     }
+router.delete("/:arepaId", async (req, res) => {
+    console.log(req.params.arepaId)
+    //res.send('see the terminal')
+  try{
+        let foundArepa=await Arepa.findByIdAndRemove({_id:req.params.arepaId})
+        res.redirect("/arepas");
+  }catch(error){
+      console.log(error)
+      res.send('see the terminal')
+    }
     
   // );
 
