@@ -52,8 +52,8 @@ router.get("/:id/edit", async (req, res) => {
 });
 
 //Put ingredient to arepa
-router.put('/:id/ingredients', async (req, res) => {
-  console.log(req.body)
+router.put("/:id/ingredients", async (req, res) => {
+  console.log(req.body);
   let foundArepa = await Arepa.findByIdAndUpdate(
     req.params.id,
     {
@@ -61,18 +61,37 @@ router.put('/:id/ingredients', async (req, res) => {
         ingredients: req.body.ingredientId,
       },
     },
-      {new: true, upsert: true})
-      console.log(foundArepa)
-    
+    { new: true, upsert: true }
+  );
+  console.log(foundArepa);
+
   res.redirect(`/arepas/${foundArepa.id}`);
 });
 
 //Delete Arepa
-router.delete("/:id", (req, res) => {
-  Arepa.findByIdAndRemove(req.params.id, (err) => {
-    if (err) res.send(err);
-    res.redirect("/arepas");
-  });
+// router.delete("/:id", (req, res) => {
+//   Arepa.findByIdAndRemove(req.params.id, (err) => {
+//     if (err) res.send(err);
+//     res.redirect("/arepas");
+//   });
+//   //redirect back to index route
+// });
+//Delete Arepa
+router.delete("/:id", async (req, res) => {
+  await Arepa.findOneAndUpdate(
+    { id: req.params.id },
+    {$pull: { ingredients: req.params.id }},
+    { new: true })
+    .then(ingredients=>console.log(ingredients))
+    .catch(err =>console.log(err))
+    
+    Arepa.findByIdAndRemove(
+      { _id: req.params.id }, (err) => {
+        res.send('successful')
+      }
+    
+  );
+
   //redirect back to index route
 });
 

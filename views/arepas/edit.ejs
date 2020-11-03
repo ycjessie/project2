@@ -16,7 +16,7 @@
         <input type="submit" value="Edit">
     </form>
     <ul>
-        <% arepas.ingredients.forEach(ing => { %>
+        <% ingredients.forEach(ing => { %>
          <li>
            <%= ing.name %>
            <form action="/arepas/<%=ing._id%>?_method=DELETE" method="POST">

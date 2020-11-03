@@ -1,5 +1,6 @@
 
 const router=require('express').Router();
+const Arepa=require('../models/arepa')
 const Ingredient = require('../models/ingredient');
 
 //Index All Ingredient
@@ -50,12 +51,16 @@ router.get("/:id/edit", async(req,res)=>{
         }
    })
 })
-//Delete Ingredient
-router.delete("/:id", (req, res) => {
-    Ingredient.findByIdAndRemove(req.params.id, (err) => {
-      if (err) res.send(err);
-      res.redirect("/arepas");
-    });
+//Delete Ingredient in Arepa
+router.delete("/:id",async (req, res) => {
+    console.log(req.body)
+    let foundArepa = await Arepa.findOneAndUpdate(
+      {id:req.params.id},
+      {$pull: {ingredients: {_id:id}}},
+      {new: true})
+      console.log(foundArepa)
+      res.send(foundArepa)
+      //res.redirect("/arepas");
     //redirect back to index route
-});
+  });
 module.exports=router;
