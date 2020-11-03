@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1><%=arepas.name%> Detail</h1>
-    <h4>Ingredients</h4>
+    
     <form action="/arepas/<%= arepas._id %>?_method=PUT" method="POST" >
         <label for="name"> Name</label><br>
         <input type="text" id="name" name="name" value="<%= arepas.name %> "><br>
@@ -15,6 +15,7 @@
         <input type="text" id="image" name="image" value="<%= arepas.image %> ">
         <input type="submit" value="Edit">
     </form>
+    <h4>Ingredients</h4>
     <ul>
         <% arepas.ingredients.forEach(ing => { %>
          <li>

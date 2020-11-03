@@ -44,6 +44,8 @@ const arepaController = require('./controllers/arepasController.js')
 app.use('/arepas', arepaController)
 const ingredientController = require('./controllers/ingredientsController.js')
 app.use('/ingredients', ingredientController)
+const locationController = require('./controllers/locationsController.js')
+app.use('/locations', locationController)
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
