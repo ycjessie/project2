@@ -16,6 +16,13 @@ router.get("/", async (req, res) => {
     arepas: allarepas,
   });
 });
+//Home 
+router.get("../", async (req, res) => {
+  let allarepas = await Arepa.find({});
+  res.render("../home.ejs", {
+    arepas: allarepas,
+  });
+});
 //Show Arepa
 router.get("/:id", async (req, res) => {
   let allIngredients = await Ingredient.find({});
