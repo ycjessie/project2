@@ -3,9 +3,9 @@
     <form action="/arepas" method="POST">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" name="name" />
+          <input required type="text" class="form-control" id="name" name="name" />
           <label for="image">Image</label>
-          <input type="text" class="form-control" id="image" name="image" />
+          <input required type="text" class="form-control" id="image" name="image" />
         </div>
         <% ingredients.forEach(ingredient => { %>
         <input
