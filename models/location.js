@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const addressSchema = new mongoose.Schema({
   cityName:{type:String},
-  stateName:{type:String,unique:true},
- // stateName:{type: String,unique:true,require:true},
+  stateName:{type:String},
+
 },{timestamps:true});
 
 const locationSchema = new mongoose.Schema({

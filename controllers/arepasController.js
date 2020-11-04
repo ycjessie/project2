@@ -29,7 +29,6 @@ router.get("/:id", async (req, res) => {
     ingredients: allIngredients,
   });
 });
-
 // CREATE  A NEW/Post AREPA
 router.post("/", async (req, res) => {
   //passing the checkbox by objectId

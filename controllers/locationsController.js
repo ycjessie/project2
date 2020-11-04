@@ -17,20 +17,22 @@ router.get("/:locationId", (req, res) => {
 // CREATE A NEW LOCATION
 router.post('/', async (req, res) => {
   try{
-  let arepaLocation=await Location.create(req.body)
-    res.send(arepaLocation);
-    //res.redirect(`/locations/${newLocation._id}`);
+    let arepaLocation=await Location.create(req.body)
+    //res.send(arepaLocation);
+    res.redirect(`/locations/${arepaLocation._id}`);
   }catch(error){
     console.log(error)
     res.send('see terminal')
   }
 });
-
 // CREATE Address EMBEDDED IN location
-router.post("/:locationId/address", (req, res) => {
+router.post("/:locationId/address",async (req, res) => {
   console.log(req.body);
   // store new address in memory with data from request body
-  const newAddress = new Address({ cityName:req.body.cityName,stateName:req.body.stateName});
+  const newAddress = await new Address({ 
+    cityName:req.body.cityName,
+    stateName:req.body.stateName
+  });
 
   // find location in db by id and add new address
   Location.findById(req.params.locationId, (error, location) => {

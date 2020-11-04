@@ -40,11 +40,13 @@ async function seed() {
   // CREATE A NEW Arepa
   const Pabellon = new Arepa({
     name: 'Arepa Pabellon',
+    image:'arepa pabellon.jpg',
     ingredients: [],
   });
 
   const Rumbera = new Arepa({
     name: 'Arepa Rumbera',
+    image:'arepa Rumbera.jpg',
     ingredients: [],
   });
 
