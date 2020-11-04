@@ -6,27 +6,23 @@
     <title>Location detail</title>
 </head>
 <body>
-    <h1><%= location.name %>'s Detail Page</h1>
-<h4>Create a New Tweet</h4>
+    <h1><%= location.name %>'s Locations</h1>
+<ul>
+  <% location.address.forEach(add => { %>
+  <li><%= add.cityName %>, <%= add.stateName %> </li>
+  <% }) %>
+</ul>
+<h4>Create a New Location</h4>
 <form action="/locations/<%= location.id %>/address" method="POST">
   <div class="form-group">
 
     <label for="cityName">City</label>
-    <input type="text" class="form-control" id="cityName" name="cityName"/>
+    <input required type="text" class="form-control" id="cityName" name="cityName"/>
     <label for="stateName">State</label>
-    <input type="text" class="form-control" id="stateName" name="stateName"/>
+    <input required type="text" class="form-control" id="stateName" name="stateName"/>
     
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<h1>Location</h1>
-
-<ul>
-  <% location.address.forEach(add => { %>
-  <li><%= add.cityName %></li>
-  <% }) %>
-</ul>
-    
 </body>
 </html>
