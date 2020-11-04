@@ -3,6 +3,7 @@
 //___________________
 const express = require('express');
 const methodOverride  = require('method-override');
+const expressLayouts=require('express-ejs-layouts');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
@@ -29,8 +30,13 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // open the connection to mongo
 db.on('open' , ()=>{});
 //___________________
+//configuration for the layout
+//___________________
+app.set('view engine','ejs')
+//___________________
 //Middleware
 //___________________
+app.use(expressLayouts);
 //use public folder for static assets
 app.use(express.static('public'));
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
@@ -49,7 +55,8 @@ app.use('/locations', locationController)
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  //res.send('Hello World!');
+  res.render('home.ejs')
 });
 //___________________
 //Listener

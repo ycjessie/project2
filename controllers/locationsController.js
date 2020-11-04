@@ -14,6 +14,14 @@ router.get("/:locationId", (req, res) => {
     res.render("locations/show.ejs", { location, now });
   });
 });
+//Index All locations
+router.get("/",  (req, res) => {
+  
+  let allLocations =  Location.find({});
+  res.render("locations/index.ejs", {
+    stores: allLocations,
+  });
+});
 // CREATE A NEW LOCATION
 router.post('/', async (req, res) => {
   try{

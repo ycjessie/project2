@@ -1,9 +1,8 @@
 {
-  
   "name": "project2",
   "version": "1.0.0",
   "engines": {
-  "node": "14.11.0"
+    "node": "14.11.0"
   },
   "description": "",
   "main": "server.js",
@@ -23,6 +22,8 @@
   },
   "homepage": "https://github.com/ycjessie/project2#readme",
   "dependencies": {
+    "bulma": "^0.9.1",
+    "bulma-start": "0.0.4",
     "dayjs": "^1.9.4",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
