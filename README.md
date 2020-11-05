@@ -76,7 +76,7 @@ Package Manager(NPM)
    
 </ul>
 
-## Arepa photo credits
+## Photo credits
 <ul>
    <li><a href="https://upload.wikimedia.org/wikipedia/commons/e/e8/Arepa_de_pabellon.jpg"> Pabellon</a> </li>upload wikipedia</li>
    <li><a href="https://hungrysofia.files.wordpress.com/2011/03/img_9072_2.jpg"> Domino</a> </li>hungrysofia</li>
@@ -84,5 +84,6 @@ Package Manager(NPM)
    <li><a href="https://www.wikichef.net/webapp/img/recipes/73f721_arepa-de-queso-blanco-arepero-o-de-mano-wc_w1000.jpg"> con Queso</a> </li>wikichef</li>
    <li><a href="https://thumbs.dreamstime.com/b/venezuelan-arepas-here-homemade-venezuelan-arepas-close-up-reina-pepiada-avocado-chicken-arepa-venezuelan-arepas-homemade-126181930.jpg"> Reina Pepiada</a> </li>Dreamstime</li>
    <li><a href="https://i1.wp.com/enrilemoine.com/wp-content/uploads/2016/08/2.-Tuna-Salad-Arepa-SAVOIR-FAIRE-by-enrilemoine.jpg?ssl=1"> Tuna</a> </li>website enrolemoine</li>
-   
+   <li><a href="https://www.theconstitutional.com/sites/drupal.theconstitutional.com/files/Liberty_Bell%20w%20ind%20hall%20horiz.jpg">Philadelphia</a> </li>The Constitutional</li>
+   <li><a href="https://culturecrusaders.com/wp-content/uploads/2020/06/Six-best-things-to-do-in-Hollywood-FL-2.jpg">Oakland Park</a> </li>Culture Crusaders</li>
 </ul>
