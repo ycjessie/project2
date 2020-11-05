@@ -15,13 +15,17 @@ router.get("/:locationId", (req, res) => {
   });
 });
 //Index All locations
-router.get("/",  (req, res) => {
-  
-  let allLocations =  Location.find({});
-  res.render("locations/index.ejs", {
-    stores: allLocations,
-  });
-});
+router.get('/',(req,res)=>{
+  Location.find({},(err,foundAlladdress)=>{
+      
+      if (err) res.send(err);
+      res.render('locations/index.ejs',{
+          data:foundAlladdress,
+          
+      })
+  })
+})
+
 // CREATE A NEW LOCATION
 router.post('/', async (req, res) => {
   try{
