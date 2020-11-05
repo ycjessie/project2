@@ -17,10 +17,10 @@ router.get("/:locationId", (req, res) => {
 //Index All locations
 router.get('/',(req,res)=>{
   Location.find({},(err,foundAlladdress)=>{
-      
+      //res.send(foundAlladdress[0])
       if (err) res.send(err);
       res.render('locations/index.ejs',{
-          data:foundAlladdress,
+          location:foundAlladdress[0],
           
       })
   })

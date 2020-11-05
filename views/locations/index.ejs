@@ -6,11 +6,11 @@
     <title>Location detail</title>
 </head>
 <body>
-    <h1><%= data.name %>'s Locations</h1>
+    <h1><%= location.name %>'s Locations</h1>
   
 <ul>
-  <% data.forEach(data => { %>
-    <li><%= data.cityName %>-<%= data.stateName %></li>
+  <% location.address.forEach(add => { %>
+    <li><%= add.cityName %>, <%= add.stateName %></li>
     <% }) %>
 </ul>
 

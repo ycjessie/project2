@@ -1,6 +1,6 @@
 # PROJECT 2
 
-description
+Project 2 use Node.js, MongoDB, Express and EJS with Bootstrap framework to build out a full-stack web application. The website is to market and sell Arepas,primarily in the cuisines of Venezuela.
 
 ## Installation
 
@@ -8,7 +8,7 @@ No installation
 
 ## Link
 
-<a href=""> Project</a>
+<a href="https://jessie-project2.herokuapp.com/"> Project</a>
 
 ## Preview
 
