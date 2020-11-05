@@ -19,28 +19,37 @@ No installation
 
 ## Technologies used
    
-CSS 
+Frontend  
    <ul>
-   <li><a href="https://getbootstrap.com/"> Bootstrap</a></li>
-   </ul>
-Node.js
-
-MongoDB
-
-Package Manager(NPM)
-<ul>
+   <li>CSS<a href="https://getbootstrap.com/"> Bootstrap Framework</a>
+   </li>
+   <li><a href="https://www.npmjs.com/"> Pacakge Manager(NPM)</a>
+   </li>
+   <ul>
 <li>express </li>
 <li>mongoose </li>
 <li>express-ejs-layouts </li>
 <li>ejs method-override </li>
 <li>dayjs</li>
 </ul>
+   </ul>
+Backend 
+   <ul>
+   <li>Javascript runtime<a href="https://www.heroku.com/"> Node.js</a></li>
+   <li>RESTful API</li>
+   <li>Database<a href="https://www.mongodb.com/"> MongoDB</a></li>
+   <li>Data Modeling<a href="https://www.mongodb.com/"> Mongoose</a></li>
+   <li>Language<a href="https://ejs.co/"> EJS</a> </li>
+   <li>Version Control<a href="https://github.com/"> Github</a> </li>
+   </ul>
+DevOps 
+   <ul>
+   <li><a href="https://www.heroku.com/"> Heroku</a></li>
+   </ul>
 
 ## Features
 
 - Can be viewed across portable electroic devices
-
-
 
 ## User Stories
 <ul>
@@ -63,8 +72,6 @@ Package Manager(NPM)
    <li>Include log in functionality with encripted passwords </li>
    <li>Incorporate Google Map for store location </li>
 </ul>
-
-
 
 ## Inspiration
 <ul>
