@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Arepa = require('./models/arepa');
 const Ingredient = require('./models/ingredient');
 
-const MONGODB_URI = 'mongodb://localhost:27017/'+ 'jessie-project2';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ 'jessie-project2';
 mongoose.connect(
     MONGODB_URI,
   { useNewUrlParser:true,
