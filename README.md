@@ -72,7 +72,7 @@ DevOps
 <li>As an admin, I am able able to add a picture to a arepa</li>
 <li>As an admin, I am able able to update arepa name to a exiting arepa</li>
 <li>As an admin, I am able able to update picture to a exiting arepa</li>
-<li>As an admin, I  amable able to remove ingredients to a arepa</li>
+<li>As an admin, I  am able to remove ingredients to a arepa</li>
 <li>As an admin, I am able able to remove a arepa</li>
 <li>As an admin, I am able able to create a new store name </li>
 <li>As an admin, I am able able to add new locations</li>
