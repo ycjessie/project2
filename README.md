@@ -13,8 +13,8 @@ No installation
 ## Preview
 
 <p float="left">
-  <img src="./public/image/home.png" alt="" width="450px" height="100px">
-  <img src="./public/image/Location-Arepa-Ingredients.png" alt="" width="350px" height="100px">
+  <img src="./image/Home.png" alt="" width="200px" height="100px">
+  <img src="./image/Location-Arepa-Ingredients.png" alt="" width="200px" height="100px">
 </p>
 
 
