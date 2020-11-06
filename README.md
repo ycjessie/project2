@@ -15,6 +15,7 @@ No installation
 <p float="left">
   <img src="./image/Home.png" alt="Home" width="400px" height="375px">
   <img src="./image/Location-Arepa-Ingredients.png" alt="schema" width="400px" height="375px" >
+  <img src="./image/wireframe.jpg" alt="schema" width="400px" height="375px" >
 </p>
 
 
