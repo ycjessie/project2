@@ -8,14 +8,15 @@ No installation
 
 ## Link
 
-<a href="https://jessie-project2.herokuapp.com/"> Project</a>
+<a href="https://jessie-project2.herokuapp.com/"> Tasty Arepas</a>
 
 ## Preview
 
 <p float="left">
-  <img src="" alt="" width="" height="">
-  
+  <img src="./public/image/home.png" alt="" width="450px" height="100px">
+  <img src="./public/image/Location-Arepa-Ingredients.png" alt="" width="350px" height="100px">
 </p>
+
 
 ## Technologies used
    
@@ -31,17 +32,29 @@ Frontend
 <li>express-ejs-layouts </li>
 <li>ejs method-override </li>
 <li>dayjs</li>
+<li>bcrypt</li>
+
 </ul>
    </ul>
 Backend 
    <ul>
-   <li>Javascript runtime<a href="https://www.heroku.com/"> Node.js</a></li>
-   <li>RESTful API</li>
+   <li><a href="https://www.nodejs.org/"> Node.js</a></li>
+   <li>RESTful Routes <ul>
+   <li>Route methods<a href="https://expressjs.com/"> Express.js</a>
+   <li>Route Testing<a href="https://www.postman.com/"> Postman</a></li></li></ul>
    <li>Database<a href="https://www.mongodb.com/"> MongoDB</a></li>
-   <li>Data Modeling<a href="https://www.mongodb.com/"> Mongoose</a></li>
-   <li>Language<a href="https://ejs.co/"> EJS</a> </li>
-   <li>Version Control<a href="https://github.com/"> Github</a> </li>
+   <li>Data Modeling<a href="https://www.mongoose.com/"> Mongoose ODM</a></li>
+   <ul>
+      <li>Model/Schema</li>
+      <li>MongoDB connection</li>
+      <li>Authentication</li>
+      <li>Authorization</li>
    </ul>
+   <li>Embedded Javascript Template<a href="https://ejs.co/"> EJS</a> </li>
+   <li>Version Control<a href="https://github.com/"> Github</a> </li>
+   
+   </ul>
+   
 DevOps 
    <ul>
    <li><a href="https://www.heroku.com/"> Heroku</a></li>
@@ -80,6 +93,8 @@ DevOps
    <li><a href="https://codepen.io/peterbenoit/pen/jwyLrV"> Bootstrap Card Columns</a> Peter Benoit</li>
 
    <li><a href="https://youtu.be/1NrHkjlWVhM"> How To Build A Markdown Blog Using Node.js, Express, And MongoDB</a> Web Dev Simplified</li>
+
+   <li><a href="https://youtu.be/BEoFSRdkSZQ"> Full Stack Developer Roadmap</a> Adrian Twarog</li>
    
 </ul>
 
